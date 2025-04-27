@@ -1,0 +1,19 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border: 1px solid red;
+  margin-bottom: 25px
+}
+
+.name {
+  @include h1;
+}
+
+.info {
+  font-size: 1.2rem;
+  color: grey;
+}
