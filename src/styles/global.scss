@@ -1,5 +1,5 @@
 @import '../../node_modules/reset-css/sass/_reset.scss';
-@import "@fontsource/inter";
+@import '@fontsource/inter';
 @import './vars.scss';
 
 html,
@@ -18,7 +18,6 @@ body {
   color: $defaultTextColor;
   line-height: $defaultLineHeight;
   padding-top: 50px;
-
 }
 
 *,
@@ -30,13 +29,13 @@ body {
 .app_wrapper {
   max-width: 800px;
   margin: 0 auto;
-  border: 1px solid red;
-
+  // border: 1px solid red;
 }
 
 .search_wrapper {
   display: flex;
   justify-content: space-between;
-
-  border: 1px solid red;
+  align-items: center;
+  margin-bottom: 3rem;
+  height: 3rem;
 }

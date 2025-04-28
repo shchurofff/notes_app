@@ -1,0 +1,16 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.filterGroup {
+  display: flex;
+  justify-content: flex-end;
+  width: 19%;
+}
+
+.button_l {
+  @include buttons(0.4rem 0 0 0.4rem);
+}
+
+.button_r {
+  @include buttons(0 0.4rem 0.4rem 0);
+}

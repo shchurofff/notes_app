@@ -1,6 +1,37 @@
 @import './vars.scss';
 
 @mixin h1 {
-  font-size: 30px;
+  font-size: 1.6rem;
   font-weight: bold;
+}
+
+@mixin inputs {
+  color: $defaultTextColor;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  background-color: $white;
+  border: none;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+@mixin buttons($radius: 8px) {
+  width: 100%;
+  color: $defaultTextColor;
+  background-color: $white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: $radius;
+  border: 0.5px solid #494b4c;
+
+  &:hover {
+    background: #494949;
+    color: $white;
+  }
+
+  &:active {
+    background: #4e99fc;
+    color: $white;
+  }
 }

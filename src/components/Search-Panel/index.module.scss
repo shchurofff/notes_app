@@ -1,9 +1,16 @@
-// .search-panel {
-//   margin: 1rem 0;
-// }
+@import '../../styles/vars';
+@import '../../styles/mixins';
 
-// .search-panel .search-input {
-//   width: auto;
-//   flex-grow: 1;
-//   margin-right: 3px;
-// }
+.input_wrapper {
+  width: 80%;
+}
+
+.input {
+  @include inputs;
+  border-radius: 0.4rem;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+}

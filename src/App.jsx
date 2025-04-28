@@ -5,11 +5,10 @@ import SearchPanel from './components/Search-Panel'
 import { PostStatusFilter } from './components/Post-Status-Filter'
 
 export const App = () => {
-
   return (
     <div className="app_wrapper">
       <AppHeader />
-      <div className='search_wrapper'>
+      <div className="search_wrapper">
         <SearchPanel />
         <PostStatusFilter />
       </div>
