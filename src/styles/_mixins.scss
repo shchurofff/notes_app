@@ -1,20 +1,22 @@
 @import './vars.scss';
 
 @mixin h1 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  padding-bottom: .7rem;
 }
 
-@mixin inputs {
-  color: $defaultTextColor;
-  font-size: 1.1rem;
-  padding: 0.5rem;
-  border-radius: 0.4rem;
-  background-color: $white;
-  border: none;
-  width: 100%;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-}
+// @mixin inputs {
+//   color: $defaultTextColor;
+//   font-size: $defaultFontSize;
+//   padding: 0.5rem;
+//   border-radius: 8px;
+//   background-color: $white;
+//   border: 1px solid #444;
+//   transition: border-color 0.3s;
+//   width: 100%;
+//   outline: none;
+// }
 
 @mixin buttons($radius: 8px) {
   width: 100%;

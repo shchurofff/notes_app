@@ -1,12 +1,12 @@
 $white: #f9f9f9;
 $black: #000;
-$dark-grey: #2d3436;
+$dark-grey: rgb(28,28,28);
 $mint: #8ceebf;
 $blue: #eaf5fc;
-$peach: #ffb7b2;
+
 
 $defaultFontFamily: 'Inter', sans-serif;
-$defaultFontSize: 16px;
-$defaultBackgroundColor: $blue;
-$defaultTextColor: $dark-grey;
+$defaultFontSize: 14px;
+$defaultBackgroundColor: $dark-grey;
+$defaultTextColor: $white;
 $defaultLineHeight: 1.2;

@@ -2,10 +2,7 @@
 @import '../../styles/mixins.scss';
 
 .header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
 }
 
 .name {
@@ -13,6 +10,6 @@
 }
 
 .info {
-  font-size: 1.2rem;
-  color: grey;
+  font-size: $defaultFontSize;
+  color: $white;
 }
