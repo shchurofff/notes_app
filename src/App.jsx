@@ -1,20 +1,22 @@
 import React from 'react'
-import './styles/global.scss'
+import { AddInput } from './components/Add-Input'
 import AppHeader from './components/App-Header'
 import SearchPanel from './components/Search-Panel'
-import { PostStatusFilter } from './components/Post-Status-Filter'
-import { AddInput } from './components/Add-Input'
+import './styles/global.scss'
 
 export const App = () => {
   return (
     <div className="app_wrapper">
-      <div className='nav'>
+      <div className="nav">
         <AppHeader />
-        <div className="search_wrapper">
-          <SearchPanel />
-        </div>
+        <SearchPanel />
       </div>
-      <div className='notes_part'>
+      <div className="notes_part">
+        <div className="notes_content">
+          <p>Заметка 1</p>
+          <p>Заметка 2</p>
+          <p>Заметка 3</p>
+        </div>
         <AddInput />
       </div>
     </div>

@@ -1,5 +1,19 @@
 .add_wrapper {
-  border: 2px solid red;
+  padding: 1rem;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
 
-  
+.custom_input {
+  background: #282D33;      /* тёмный фон */
+  color: #fff;              /* белый текст */
+  border: none;             /* без рамки */
+  outline: none;            /* без стандартного выделения */
+  padding: 10px 16px;       /* внутренние отступы */
+  width: 100%;              /* на всю ширину */
+  font-size: 16px;          /* размер шрифта */
+  border-radius: 6px;       /* скругление углов */
+  box-sizing: border-box;
 }

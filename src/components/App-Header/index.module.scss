@@ -3,13 +3,16 @@
 
 .header {
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .name {
   @include h1;
+
 }
 
 .info {
   font-size: $defaultFontSize;
   color: $white;
+
 }

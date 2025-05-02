@@ -17,7 +17,6 @@ body {
   background: $defaultBackgroundColor;
   color: $defaultTextColor;
   line-height: $defaultLineHeight;
-  // padding-top: 50px;
 }
 
 *,
@@ -29,32 +28,37 @@ body {
 .app_wrapper {
   display: flex;
   max-width: 100%;
-  // margin: 0 auto;
+  background-color: rgb(34, 34, 34);
+
 }
 
 .nav {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   max-width: 25%;
   height: 100vh;
   padding: 2rem 1rem;
 
   background-color: rgb(34, 34, 34);
-  border-right: 1px solid red;
 }
 
 .notes_part {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  border-radius: 5px;
+background-color:rgb(28,28,28);
 }
 
-// .search_wrapper {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   margin-bottom: 3rem;
-//   height: 3rem;
-// }
+
+.notes_content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  
+  
+}
