@@ -1,6 +1,7 @@
 @import '../../node_modules/reset-css/sass/_reset.scss';
 @import '@fontsource/inter';
 @import './vars.scss';
+@import './mixins';
 
 html,
 body,
@@ -9,11 +10,13 @@ body,
   min-height: 100%;
   width: 100%;
   position: relative;
+
+  font-size: $defaultFontSize;
+
 }
 
 body {
   font-family: $defaultFontFamily;
-  font-size: $defaultFontSize;
   background: $defaultBackgroundColor;
   color: $defaultTextColor;
   line-height: $defaultLineHeight;
@@ -32,7 +35,7 @@ body {
 
 }
 
-.nav {
+.navbar {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -43,22 +46,23 @@ body {
   background-color: rgb(34, 34, 34);
 }
 
-.notes_part {
+.main {
   position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  padding: 2rem 3rem;
+
 
   border-radius: 5px;
-background-color:rgb(28,28,28);
+  background-color:rgb(28,28,28);
+
 }
 
 
-.notes_content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1rem;
-  
-  
+
+.main_header_title {
+  @include h1;
 }
+

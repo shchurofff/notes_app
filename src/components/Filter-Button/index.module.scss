@@ -1,0 +1,21 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.filter_btn {
+  margin-top: 1rem;
+  padding: 0.3rem 0.7rem;
+  background-color: rgb(34, 34, 34);
+  text-align: left;
+  font-size: $defaultFontSize;
+  color: $defaultTextColor;
+  border: none;
+  border-radius: 0.2rem;
+
+  &:hover {
+    background-color: rgb(52, 52, 52);
+  }
+
+  &:active {
+    background-color: rgb(52, 52, 52);
+  }
+}
