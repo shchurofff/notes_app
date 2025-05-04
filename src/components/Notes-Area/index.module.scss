@@ -1,7 +1,20 @@
 .notes_content {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem 0;
-  
- 
+
+  //  border: 1px solid red;
+
+  &::-webkit-scrollbar {
+    width: 8px; /* Ширина скроллбара */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgb(28, 28, 28);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888; /* Цвет ползунка */
+    border-radius: 4px; /* Скругление */
+    border: 2px solid #222; /* Отступ внутри трека */
+  }
 }

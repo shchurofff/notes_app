@@ -1,12 +1,13 @@
 import React from 'react'
 import { Note } from '../Note'
-import css from './index.module.scss';
+import css from './index.module.scss'
 
-export const NotesArea = () => {
+export const NotesArea = ({ notes, onDelete }) => {
   return (
-    <div className={css.notes_content}>
-      <Note />
-      <Note />
-    </div>
+    <ul className={css.notes_content}>
+      {notes.map((note) => (
+        <Note key={note.id} text={note.text} onDelete={() => onDelete(note.id)} />
+      ))}
+    </ul>
   )
 }

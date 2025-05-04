@@ -1,8 +1,6 @@
 @import '../../styles/vars';
 @import '../../styles/mixins';
 
-
-
 .input {
   width: 100%;
   background-color: rgb(34, 34, 34);
@@ -10,7 +8,7 @@
   border: 0.1px solid grey;
   border-bottom: 2px solid grey;
 
-  padding: 0.3rem 0.7rem;
+  padding: $defaultPadding;
 
   &:focus {
     outline: none;

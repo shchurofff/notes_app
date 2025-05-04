@@ -1,10 +1,11 @@
-import React from 'react';
-import css from './index.module.scss';
+import React from 'react'
+import css from './index.module.scss'
 
-export const Note = () => {
+export const Note = ({ text, onDelete }) => {
   return (
-    <div className={css.note_block}>
-      <p>Заметка 1</p>
-    </div>
-  );
-};
+    <li className={css.note_block}>
+      <p>{text}</p>
+      <button onClick={onDelete}>Удалить</button>
+    </li>
+  )
+}

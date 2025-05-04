@@ -1,5 +1,7 @@
+@import '../../styles/vars';
+
 .add_wrapper {
-  padding-top: 1rem;
+  margin-top: 0.5rem;
   width: 100%;
   position: sticky;
   bottom: 0;
@@ -7,13 +9,13 @@
 }
 
 .custom_input {
-  background: #282D33;      /* тёмный фон */
-  color: #fff;              /* белый текст */
-  border: none;             /* без рамки */
-  outline: none;            
-  padding: 10px 16px;       /* внутренние отступы */
-  width: 100%;              /* на всю ширину */
-  font-size: 16px;          /* размер шрифта */
-  border-radius: 6px;       
+  background-color: rgb(34, 34, 34);
+  color: #fff; /* белый текст */
+  border: none; /* без рамки */
+  outline: none;
+  padding: $defaultPadding; /* внутренние отступы */
+  width: 100%; /* на всю ширину */
+  font-size: 16px; /* размер шрифта */
+  border-radius: 6px;
   box-sizing: border-box;
 }

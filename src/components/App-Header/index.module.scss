@@ -8,11 +8,9 @@
 
 .name {
   @include h1;
-
 }
 
 .info {
-  font-size: $defaultFontSize;
+  font-size: 0.8rem;
   color: $white;
-
 }

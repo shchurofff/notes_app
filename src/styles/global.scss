@@ -12,7 +12,6 @@ body,
   position: relative;
 
   font-size: $defaultFontSize;
-
 }
 
 body {
@@ -32,7 +31,6 @@ body {
   display: flex;
   max-width: 100%;
   background-color: rgb(34, 34, 34);
-
 }
 
 .navbar {
@@ -54,15 +52,11 @@ body {
   flex-grow: 1;
   padding: 2rem 3rem;
 
-
   border-radius: 5px;
-  background-color:rgb(28,28,28);
-
+  background-color: rgb(28, 28, 28);
 }
-
-
 
 .main_header_title {
   @include h1;
+  margin-bottom: 1.5rem;
 }
-

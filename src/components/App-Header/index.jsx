@@ -5,7 +5,7 @@ const AppHeader = () => {
   return (
     <div className={css.header}>
       <h1 className={css.name}>Oleg Shchurov</h1>
-      <h2 className={css.info}>? записей, из них понравилось ??</h2>
+      <h2 className={css.info}>shchurov.oleg27@gmail.com</h2>
     </div>
   )
 }
