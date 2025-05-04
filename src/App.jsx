@@ -43,6 +43,18 @@ export const App = () => {
     setNotes(notes.filter((note) => note.id !== id))
   }
 
+  const toggleImportant = (id) => {
+    setNotes(notes.map(note => {
+      if (note.id === id) {
+        // Возвращаем новый объект с инвертированным important
+        return { ...note, important: !note.important };
+      } else {
+        // Остальные заметки без изменений
+        return note;
+      }
+    }));
+  }
+
   return (
     <div className="app_wrapper">
       <div className="navbar">
@@ -55,7 +67,7 @@ export const App = () => {
         <div className="main_header">
           <h1 className="main_header_title">Все записи</h1>
         </div>
-        <NotesArea notes={notes} onDelete={deleteNote} />
+        <NotesArea notes={notes} onDelete={deleteNote} onImportant={toggleImportant}/>
         <AddInput onAdd={addNote} />
       </div>
     </div>
