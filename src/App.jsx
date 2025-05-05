@@ -5,13 +5,19 @@ import { FilterButton } from './components/Filter-Button'
 import { MainHeader } from './components/Main-Header'
 import { NotesArea } from './components/Notes-Area'
 import { SearchPanel } from './components/Search-Panel'
-import { LOCAL_STORAGE_KEY } from './selectors'
+import { LOCAL_FILTER_KEY, LOCAL_STORAGE_KEY } from './selectors'
 import './styles/global.scss'
 
 export const App = () => {
   const [notes, setNotes] = useState([])
 
-  const [filter, setFilter] = useState('')
+  // В стейт записана функция, чтобы при обновлении страницы брать информацию из ls
+  const [filter, setFilter] = useState(() => {
+    const saved = localStorage.getItem(LOCAL_FILTER_KEY)
+    return saved ? JSON.parse(saved) : 'all'
+  })
+
+  const [filterText, setFilterText] = useState('')
 
   // useEffect Для отрисовки сохранённых заметок
   // Если в lS что-то есть, то они появятся
@@ -31,6 +37,11 @@ export const App = () => {
       localStorage.removeItem(LOCAL_STORAGE_KEY) // Удаляем из хранилища, если список пуст
     }
   }, [notes])
+
+  //Эффект для записи смены фильтра в ls
+  useEffect(() => {
+    localStorage.setItem(LOCAL_FILTER_KEY, JSON.stringify(filter))
+  }, [filter])
 
   const addNote = (text) => {
     const newNote = {
@@ -61,24 +72,29 @@ export const App = () => {
   }
 
   const getFilteredNotes = () => {
-    if (filter === 'all') {
-      return notes
-    } else if (filter === 'important') {
-      return notes.filter((note) => note.important)
+    let filtered
+    if (filter === 'important') {
+      filtered = notes.filter((note) => note.important)
+    } else {
+      filtered = notes
     }
-    return notes
+
+    if (filterText !== '') {
+      filtered = filtered.filter((note) => note.text.toLowerCase().includes(filterText.toLowerCase()))
+    }
+    return filtered
   }
 
   return (
     <div className="app_wrapper">
       <div className="navbar">
         <InfoHeader />
-        <SearchPanel />
+        <SearchPanel value={filterText} searchValue={setFilterText} />
         <FilterButton value={'Все записи'} onClick={() => setFilter('all')} />
         <FilterButton value={'Важные'} onClick={() => setFilter('important')} />
       </div>
       <div className="main">
-        <MainHeader filter={filter}/>
+        <MainHeader filter={filter} />
         <NotesArea notes={getFilteredNotes()} onDelete={deleteNote} onImportant={toggleImportant} />
         <AddInput onAdd={addNote} />
       </div>
