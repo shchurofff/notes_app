@@ -1,12 +1,18 @@
 import React from 'react'
+import cn from 'classnames'
+import { FaStar, FaRegStar, FaTrash } from 'react-icons/fa'
 import css from './index.module.scss'
 
 export const Note = ({ text, important, onDelete, onImportant }) => {
   return (
     <li className={css.note_block}>
-      <p>{text}</p>
-      <button onClick={onDelete}>Удалить</button>
-      <button className={important ? css.important_btn : ''} onClick={onImportant}>Важная</button>
+      <span className={css.text}>{text}</span>
+      <button className={css.trash_btn} onClick={onDelete}>
+        <FaTrash />
+      </button>
+      <button className={cn(css.star_btn, { [css.important_btn]: important })} onClick={onImportant}>
+        {important ? <FaStar color="grey" /> : <FaRegStar />}
+      </button>
     </li>
   )
 }

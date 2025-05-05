@@ -90,8 +90,8 @@ export const App = () => {
       <div className="navbar">
         <InfoHeader />
         <SearchPanel value={filterText} searchValue={setFilterText} />
-        <FilterButton value={'Все записи'} onClick={() => setFilter('all')} />
-        <FilterButton value={'Важные'} onClick={() => setFilter('important')} />
+        <FilterButton value={'Все записи'} onClick={() => setFilter('all')} isActive={filter === 'all'} filter={filter}/>
+        <FilterButton value={'Важные'} onClick={() => setFilter('important')} isActive={filter === 'important'} filter={filter}/>
       </div>
       <div className="main">
         <MainHeader filter={filter} />
