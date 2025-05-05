@@ -10,6 +10,8 @@ import './styles/global.scss'
 export const App = () => {
   const [notes, setNotes] = useState([])
 
+  const [filter, setFilter] = useState('')
+
   // useEffect Для отрисовки сохранённых заметок
   // Если в lS что-то есть, то они появятся
   useEffect(() => {
@@ -44,15 +46,26 @@ export const App = () => {
   }
 
   const toggleImportant = (id) => {
-    setNotes(notes.map(note => {
-      if (note.id === id) {
-        // Возвращаем новый объект с инвертированным important
-        return { ...note, important: !note.important };
-      } else {
-        // Остальные заметки без изменений
-        return note;
-      }
-    }));
+    setNotes(
+      notes.map((note) => {
+        if (note.id === id) {
+          // Возвращаем новый объект с инвертированным important
+          return { ...note, important: !note.important }
+        } else {
+          // Остальные заметки без изменений
+          return note
+        }
+      })
+    )
+  }
+
+  const getFilteredNotes = () => {
+    if (filter === 'all') {
+      return notes
+    } else if (filter === 'important') {
+      return notes.filter((note) => note.important)
+    }
+    return notes
   }
 
   return (
@@ -60,14 +73,14 @@ export const App = () => {
       <div className="navbar">
         <AppHeader />
         <SearchPanel />
-        <FilterButton value={'Все записи'} />
-        <FilterButton value={'Важные'} />
+        <FilterButton value={'Все записи'} onClick={() => setFilter('all')} />
+        <FilterButton value={'Важные'} onClick={() => setFilter('important')} />
       </div>
       <div className="main">
         <div className="main_header">
           <h1 className="main_header_title">Все записи</h1>
         </div>
-        <NotesArea notes={notes} onDelete={deleteNote} onImportant={toggleImportant}/>
+        <NotesArea notes={getFilteredNotes()} onDelete={deleteNote} onImportant={toggleImportant} />
         <AddInput onAdd={addNote} />
       </div>
     </div>
