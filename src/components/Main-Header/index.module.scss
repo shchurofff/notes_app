@@ -1,0 +1,7 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.main_header_title {
+  @include h1;
+  margin-bottom: 1.5rem;
+}

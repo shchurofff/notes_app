@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './index.module.scss'
 
-const AppHeader = () => {
+export const InfoHeader = () => {
   return (
     <div className={css.header}>
       <h1 className={css.name}>Oleg Shchurov</h1>
@@ -10,4 +10,4 @@ const AppHeader = () => {
   )
 }
 
-export default AppHeader
+

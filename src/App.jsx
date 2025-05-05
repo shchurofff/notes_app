@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { AddInput } from './components/Add-Input'
-import AppHeader from './components/App-Header'
+import { InfoHeader } from './components/App-Header'
 import { FilterButton } from './components/Filter-Button'
+import { MainHeader } from './components/Main-Header'
 import { NotesArea } from './components/Notes-Area'
-import SearchPanel from './components/Search-Panel'
+import { SearchPanel } from './components/Search-Panel'
 import { LOCAL_STORAGE_KEY } from './selectors'
 import './styles/global.scss'
 
@@ -71,15 +72,13 @@ export const App = () => {
   return (
     <div className="app_wrapper">
       <div className="navbar">
-        <AppHeader />
+        <InfoHeader />
         <SearchPanel />
         <FilterButton value={'Все записи'} onClick={() => setFilter('all')} />
         <FilterButton value={'Важные'} onClick={() => setFilter('important')} />
       </div>
       <div className="main">
-        <div className="main_header">
-          <h1 className="main_header_title">Все записи</h1>
-        </div>
+        <MainHeader filter={filter}/>
         <NotesArea notes={getFilteredNotes()} onDelete={deleteNote} onImportant={toggleImportant} />
         <AddInput onAdd={addNote} />
       </div>
